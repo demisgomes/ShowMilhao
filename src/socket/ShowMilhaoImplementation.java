@@ -18,8 +18,6 @@ public class ShowMilhaoImplementation implements IShowMilhao {
 	public HashMap<Integer,Question> importQuestions(){
 		HashMap <Integer, Question> questions=new HashMap<>();
 		try {
-			//URL url = ShowMilhaoImplementation.class.getClassLoader().getResource("config/"+FILENAME);
-			  //System.out.println(ShowMilhaoImplementation.class.getResource("/src/config/"+FILENAME));
 			  String dir=System.getProperty("user.dir");
 			  File file = new File(dir+"/src/config/"+FILENAME);
 		      FileReader fileReader=new FileReader(file);
