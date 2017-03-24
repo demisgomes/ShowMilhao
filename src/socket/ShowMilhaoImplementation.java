@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
+import java.util.Random;
 
 import domain.Question;
 
@@ -129,15 +130,46 @@ public class ShowMilhaoImplementation implements IShowMilhao {
 	}
 
 	@Override
-	public void selectQuestion() {
-		// TODO Auto-generated method stub
+	public Question askQuestion() {
+		HashMap <Integer,Question> questions=importQuestions();
+		Random randomGenerator = new Random();
+		int randomInt = randomGenerator.nextInt(300);
+		return questions.get(randomInt);
+		
+	}
+
+	public int[] selectQuestions() {
+		//HashMap <Integer,Question> questions=importQuestions();
+		Random randomGenerator = new Random();
+		int[] questionsSelected=new int[10];
+	    for (int idx = 0; idx < 10; ++idx){
+	      int randomInt = randomGenerator.nextInt(300);
+	      questionsSelected[0]=randomInt;
+	    } 
+	    return questionsSelected;
+	}
+
+	@Override
+	public int answerQuestion(int answerId, Question question) {
+		return question.getCorrectAnswer();
+		
+	}
+	
+	public void startGame(){
+		HashMap <Integer,Question> questions=importQuestions();
+		int[] questionsSelected=selectQuestions();
+		
+		for (int idx = 0; idx < 10; ++idx){
+			
+		}
+		
 		
 	}
 
 	@Override
-	public int answerQuestion(int answerId) {
+	public void selectQuestion() {
 		// TODO Auto-generated method stub
-		return 0;
+		
 	}
 	
 
