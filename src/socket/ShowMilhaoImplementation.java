@@ -20,7 +20,8 @@ public class ShowMilhaoImplementation implements IShowMilhao {
 		try {
 			//URL url = ShowMilhaoImplementation.class.getClassLoader().getResource("config/"+FILENAME);
 			  //System.out.println(ShowMilhaoImplementation.class.getResource("/src/config/"+FILENAME));
-			  File file = new File(getClass().getResource("/ShowMilhaoSocket/src/config/"+FILENAME).getFile());
+			  String dir=System.getProperty("user.dir");
+			  File file = new File(dir+"/src/config/"+FILENAME);
 		      FileReader fileReader=new FileReader(file);
 		      BufferedReader lerArq = new BufferedReader(fileReader);
 		 
