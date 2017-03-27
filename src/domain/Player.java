@@ -44,4 +44,8 @@ public class Player {
 	public void setUniversityStudents(int universityStudents) {
 		this.universityStudents = universityStudents;
 	}
+	
+	public float getNextMoney(){
+		return getMoney()+100000;
+	}
 }

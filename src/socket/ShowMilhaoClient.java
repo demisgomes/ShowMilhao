@@ -23,21 +23,26 @@ public class ShowMilhaoClient {
 			Scanner keyboard = new Scanner(System.in);
 			outputStream.flush();
 			outputStream.writeObject(keyboard.nextLine());
-			
 			String message2 = (String) inputStream.readObject();
 			System.out.println(message2);
 			
+			
 			String question = (String) inputStream.readObject();
+			while (!question.contains("Acabou!")){
+				System.out.println(question);
+				outputStream.flush();
+				outputStream.writeObject(keyboard.nextLine());
+				
+				String questionAnswer = (String) inputStream.readObject();
+				System.out.println(questionAnswer);
+				
+				question = (String) inputStream.readObject();
+				
+			
+			}
+						
+			//String money = (String) inputStream.readObject();
 			System.out.println(question);
-			
-			outputStream.flush();
-			outputStream.writeObject(keyboard.nextLine());
-			
-			String questionAnswer = (String) inputStream.readObject();
-			System.out.println(questionAnswer);
-			
-			String money = (String) inputStream.readObject();
-			System.out.println(money);
 			
 
 		} catch (Exception e) {

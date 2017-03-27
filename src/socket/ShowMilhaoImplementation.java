@@ -133,18 +133,17 @@ public class ShowMilhaoImplementation implements IShowMilhao {
 	public Question askQuestion() {
 		HashMap <Integer,Question> questions=importQuestions();
 		Random randomGenerator = new Random();
-		int randomInt = randomGenerator.nextInt(300);
+		int randomInt = randomGenerator.nextInt(questions.size());
 		return questions.get(randomInt);
 		
 	}
 
-	public int[] selectQuestions() {
-		//HashMap <Integer,Question> questions=importQuestions();
-		Random randomGenerator = new Random();
-		int[] questionsSelected=new int[10];
-	    for (int idx = 0; idx < 10; ++idx){
-	      int randomInt = randomGenerator.nextInt(300);
-	      questionsSelected[0]=randomInt;
+	public HashMap <Integer,Question> selectQuestions() {
+		HashMap <Integer,Question> questionsSelected=new HashMap<>(); 
+		
+	    for (int idx = 1; idx < 11; ++idx){
+	    	Question question=askQuestion();
+	    	questionsSelected.put(idx, question);
 	    } 
 	    return questionsSelected;
 	}
@@ -155,7 +154,7 @@ public class ShowMilhaoImplementation implements IShowMilhao {
 		
 	}
 	
-	public void startGame(){
+	/*public void startGame(){
 		HashMap <Integer,Question> questions=importQuestions();
 		int[] questionsSelected=selectQuestions();
 		
@@ -164,7 +163,7 @@ public class ShowMilhaoImplementation implements IShowMilhao {
 		}
 		
 		
-	}
+	}*/
 
 	@Override
 	public void selectQuestion() {
